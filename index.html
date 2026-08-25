@@ -3,11 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ARTMARKS - التحقق من الشهادات</title>
+    <title>ARTMARKS - التحقق من الشهادات على البلوكتشين</title>
     
+    <!-- الخطوط الرسمية -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@300;400;500;600;700&family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@300;400;500;600;700&family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
     
     <style>
       :root {
@@ -35,7 +36,7 @@
 
       header {
         background-color: var(--primary-dark-green);
-        padding: 1rem 2rem;
+        padding: 1.5rem 2rem;
         border-bottom: 3px solid var(--accent-beige);
       }
 
@@ -47,78 +48,80 @@
         align-items: center;
       }
 
-      .brand {
+      .logo-brand {
         display: flex;
         align-items: center;
-        gap: 12px;
+        gap: 1rem;
         text-decoration: none;
       }
 
-      .brand img {
-        height: 48px;
+      /* الشعار الرسمي أولاً */
+      .brand-logo {
+        height: 50px;
         width: auto;
         object-fit: contain;
       }
 
       .brand-title {
         color: var(--accent-beige);
-        font-size: 1.4rem;
+        font-size: 1.5rem;
         font-weight: 700;
+        letter-spacing: 0.5px;
       }
 
-      nav ul {
+      .nav-links {
         display: flex;
-        list-style: none;
         gap: 1.5rem;
       }
 
-      nav a {
+      .nav-links a {
         color: #ffffff;
         text-decoration: none;
         font-size: 0.95rem;
-        transition: color 0.2s ease;
+        transition: color 0.3s ease;
       }
 
-      nav a:hover {
+      .nav-links a:hover {
         color: var(--accent-beige);
       }
 
       main {
         flex: 1;
-        max-width: 800px;
+        max-width: 900px;
         width: 100%;
-        margin: 4rem auto;
+        margin: 3rem auto;
         padding: 0 1.5rem;
       }
 
-      .card {
+      .verification-card {
         background: #ffffff;
         border-radius: 12px;
         padding: 2.5rem;
-        box-shadow: 0 8px 20px rgba(12, 75, 59, 0.06);
-        border: 1px solid rgba(222, 196, 130, 0.4);
+        box-shadow: 0 10px 25px rgba(12, 75, 59, 0.08);
+        border: 1px solid rgba(222, 196, 130, 0.3);
       }
 
-      .card h1 {
+      .card-title {
         color: var(--primary-dark-green);
-        font-size: 1.75rem;
+        font-size: 1.8rem;
         margin-bottom: 0.5rem;
         text-align: center;
       }
 
-      .card p {
+      .card-subtitle {
         color: var(--secondary-petroleum);
         text-align: center;
         font-size: 0.95rem;
         margin-bottom: 2rem;
       }
 
-      .search-form {
+      .search-box {
         display: flex;
         gap: 0.5rem;
+        margin-bottom: 2rem;
       }
 
-      .search-form input {
+      .search-input {
         flex: 1;
         padding: 0.85rem 1.2rem;
         border: 2px solid #e5e7eb;
@@ -126,14 +129,14 @@
         font-family: inherit;
         font-size: 0.95rem;
         outline: none;
-        transition: border-color 0.2s ease;
+        transition: border-color 0.3s ease;
       }
 
-      .search-form input:focus {
+      .search-input:focus {
         border-color: var(--secondary-petroleum);
       }
 
-      .search-form button {
+      .btn-primary {
         background-color: var(--primary-dark-green);
         color: #ffffff;
         border: none;
@@ -142,10 +145,10 @@
         font-family: inherit;
         font-weight: 600;
         cursor: pointer;
-        transition: background-color 0.2s ease;
+        transition: background-color 0.3s ease;
       }
 
-      .search-form button:hover {
+      .btn-primary:hover {
         background-color: var(--secondary-petroleum);
       }
 
@@ -153,50 +156,41 @@
         background-color: var(--primary-dark-green);
         color: #ffffff;
         text-align: center;
-        padding: 1.25rem;
+        padding: 1.5rem;
         margin-top: auto;
         font-size: 0.85rem;
         border-top: 1px solid var(--accent-beige);
-      }
-
-      .footer-logo {
-        height: 35px;
-        width: auto;
-        margin-bottom: 0.5rem;
       }
     </style>
   </head>
   <body>
     <header>
       <div class="header-container">
-        <a href="#" class="brand">
-          <img src="https://raw.githubusercontent.com/artmarksKSA/assets/main/logo.png" alt="ARTMARKS Logo" />
+        <a href="#" class="logo-brand">
+          <img src="https://raw.githubusercontent.com/artmarksKSA/assets/main/logo.png" alt="بصمات فن ARTMARKS" class="brand-logo" />
           <span class="brand-title">بصمات فن | ARTMARKS</span>
         </a>
-        <nav>
-          <ul>
-            <li><a href="#">الرئيسية</a></li>
-            <li><a href="#">التحقق من الشهادات</a></li>
-            <li><a href="#">المعرض</a></li>
-          </ul>
+        <nav class="nav-links">
+          <a href="#">الرئيسية</a>
+          <a href="#">التحقق من الشهادات</a>
+          <a href="#">المعرض</a>
         </nav>
       </div>
     </header>
 
     <main>
-      <div class="card">
-        <h1>التحقق من أصالة العمل الفني</h1>
-        <p>أدخل رقم الشهادة أو معرّف التوثيق للتحقق من بيانات الملكية</p>
+      <div class="verification-card">
+        <h1 class="card-title">التحقق من أصالة العمل الفني</h1>
+        <p class="card-subtitle">أدخل معرّف الشهادة أو الهاش الخاص بالبلوكتشين للتحقق من ملكية وثيقة الاستحواذ</p>
         
-        <form class="search-form" onsubmit="event.preventDefault();">
-          <input type="text" placeholder="أدخل معرّف الشهادة هنا..." required />
-          <button type="submit">تحقق الآن</button>
-        </form>
+        <div class="search-box">
+          <input type="text" class="search-input" placeholder="أدخل معرف الشهادة (e.g., 0x71C... or Certificate ID)" />
+          <button class="btn-primary">تحقق الآن</button>
+        </div>
       </div>
     </main>
 
     <footer>
-      <img src="https://raw.githubusercontent.com/artmarksKSA/assets/main/logo.png" alt="ARTMARKS Logo" class="footer-logo" />
       <p>© 2026 جميع الحقوق محفوظة لـ منصة بصمات فن (ARTMARKS)</p>
     </footer>
   </body>
